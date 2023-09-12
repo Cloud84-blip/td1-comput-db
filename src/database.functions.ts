@@ -21,7 +21,7 @@ async function getNbConn() {
     const currentCount = await db
       .query(
         sql`
-      SELECT user_id FROM connections WHERE connection_id = 1`,
+      SELECT user_id FROM connections WHERE connection_id = 0`,
       )
       .then((data) => {
         return data[0].user_id;
