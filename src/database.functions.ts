@@ -8,7 +8,7 @@ async function createTable() {
     connection_id serial PRIMARY KEY,
     user_id int);`);
     await db.query(sql`
-    INSERT into connections VALUES {0, 0}
+    INSERT into connections VALUES (0, 0)
     `);
   } catch (error) {
     throw error;
