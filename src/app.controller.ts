@@ -6,7 +6,10 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  async getNbConn(): Promise<string> {
+    const res = await this.appService.getNbConn().then((data) => {
+      return data;
+    });
+    return res;
   }
 }

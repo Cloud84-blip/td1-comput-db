@@ -1,0 +1,21 @@
+[
+  {
+    "name": "connections",
+    "columns": [
+      {
+        "name": "connection_id",
+        "isNullable": false,
+        "hasDefault": true,
+        "typeId": 23,
+        "typeName": "INTEGER"
+      },
+      {
+        "name": "user_id",
+        "isNullable": true,
+        "hasDefault": false,
+        "typeId": 23,
+        "typeName": "INTEGER"
+      }
+    ]
+  }
+]
