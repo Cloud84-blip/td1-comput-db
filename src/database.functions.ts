@@ -15,6 +15,16 @@ async function createTable() {
   }
 }
 
+async function insertValue() {
+  try {
+    await db.query(sql`
+    INSERT into connections VALUES (0, 0)
+    `);
+  } catch (error) {
+    throw error;
+  }
+}
+
 async function getNbConn() {
   try {
     // Récupérer le nombre actuel de connexions depuis la base de données
@@ -32,7 +42,7 @@ async function getNbConn() {
   }
 }
 
-export { getNbConn, createTable };
+export { getNbConn, createTable, insertValue };
 
 async function incrementConnectionCount(count: number) {
   try {
