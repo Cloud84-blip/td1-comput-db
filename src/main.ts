@@ -5,7 +5,7 @@ import { createTable, insertValue } from './database.functions';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  await insertValue();
+  //await insertValue();
 
   await app.listen(8080);
 }
