@@ -2,12 +2,13 @@ import { sql } from '@databases/pg';
 import createPool from '@databases/pg';
 import tables from '@databases/pg-typed';
 import DatabaseSchema from './__generated__';
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('dotenv').config();
 export { sql };
 
 const db = createPool({
   bigIntMode: 'number',
-  connectionString: 'postgres://strat:admin@0.0.0.0:5432/counter-td1',
+  connectionString: process.env.POSTGRESQL_ADDON_URI,
 });
 
 export default db;

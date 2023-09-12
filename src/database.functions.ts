@@ -1,6 +1,20 @@
 import { Connections_InsertParameters } from './__generated__';
 import db, { sql, connections } from './database';
 
+async function createTable() {
+  try {
+    await db.query(sql`
+    CREATE TABLE connections (
+    connection_id serial PRIMARY KEY,
+    user_id int);`);
+    await db.query(sql`
+    INSERT into connections VALUES {0, 0}
+    `);
+  } catch (error) {
+    throw error;
+  }
+}
+
 async function getNbConn() {
   try {
     // Récupérer le nombre actuel de connexions depuis la base de données
@@ -18,7 +32,7 @@ async function getNbConn() {
   }
 }
 
-export { getNbConn };
+export { getNbConn, createTable };
 
 async function incrementConnectionCount(count: number) {
   try {

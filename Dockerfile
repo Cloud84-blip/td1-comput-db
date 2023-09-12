@@ -3,8 +3,7 @@ ENV NODE_ENV development
 WORKDIR /app
 RUN apk update && apk add curl
 COPY . /app
-COPY package.json nest-cli.json yarn.lock docker-compose.yml ./
-COPY .env ./
+COPY package.json nest-cli.json yarn.lock ./
 RUN yarn
 RUN yarn build
 CMD ["yarn", "start"]
