@@ -52,7 +52,7 @@ async function incrementConnectionCount(count: number) {
     };
 
     // Mettre à jour la base de données avec le nouveau compteur
-    await connections(db).update({ connection_id: 1 }, newCount);
+    await connections(db).update({ connection_id: 0 }, newCount);
 
     return newCount; // Renvoie le nouveau compteur
   } catch (error) {
